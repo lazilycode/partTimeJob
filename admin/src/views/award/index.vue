@@ -94,7 +94,7 @@
 </template>
 
 <script>
-import { level_openOrClose } from '@/api/censorship'
+// import { level_openOrClose } from '@/api/censorship'
 
 export default {
   filters: {

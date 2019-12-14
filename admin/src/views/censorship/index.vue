@@ -82,9 +82,9 @@
           <p> 每道题{{ creatArr.score }}分</p>
           <el-input v-model="creatArr.topicName" type="textarea" :rows="2" placeholder="请输入题目内容" />
         </div>
-        </el-input>
+        <!-- </el-input> -->
         <el-row :gutter="20">
-          <div v-for="(item,index) in creatArr.result" class="row_falg">
+          <div v-for="(item,index) in creatArr.result" :key="index" class="row_falg">
             <el-col :span="10">
               <el-input v-model="item.resultName" placeholder="请输入答案" />
             </el-col>
@@ -169,10 +169,10 @@ export default {
 
     fetchData() {
       this.listLoading = true
-      getList().then(response => {
-        this.list = response.data.items
-        this.listLoading = false
-      })
+      // getList().then(response => {
+      //   this.list = response.data.items
+      //   this.listLoading = false
+      // })
     },
     // 点击标示
     click_row(e) {
