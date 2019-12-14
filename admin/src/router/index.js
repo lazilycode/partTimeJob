@@ -9,14 +9,14 @@ import Layout from '@/layout'
 export const constantRoutes = [{
   path: '/login',
   component: () =>
-            import('@/views/login/index'),
+		import('@/views/login/index'),
   hidden: true
 },
 
 {
   path: '/404',
   component: () =>
-            import('@/views/404'),
+		import('@/views/404'),
   hidden: true
 },
 
@@ -28,7 +28,7 @@ export const constantRoutes = [{
     path: 'dashboard',
     name: 'Dashboard',
     component: () =>
-                import('@/views/dashboard/index'),
+			import('@/views/dashboard/index'),
     meta: { title: '趣味问答', icon: 'dashboard' }
   }]
 },
@@ -43,14 +43,14 @@ export const constantRoutes = [{
     path: 'manage',
     name: 'Manage',
     component: () =>
-                    import('@/views/censorship/index'),
+			import('@/views/censorship/index'),
     meta: { title: '关卡管理', icon: 'tree' }
   },
   {
     path: 'set',
     name: 'Set',
     component: () =>
-                    import('@/views/censorship/index'),
+			import('@/views/censorship/index'),
     meta: { title: '关卡设置', icon: 'table' }
   }
   ]
@@ -67,14 +67,14 @@ export const constantRoutes = [{
     path: 'awardmanage',
     name: 'awardManage',
     component: () =>
-                    import('@/views/award/index'),
+			import('@/views/award/index'),
     meta: { title: '奖项管理', icon: 'tree' }
   },
   {
     path: 'awardset',
     name: 'awardSet',
     component: () =>
-                    import('@/views/award/awardset'),
+			import('@/views/award/awardset'),
     meta: { title: '奖项设置', icon: 'table' }
   },
   {
@@ -82,34 +82,32 @@ export const constantRoutes = [{
     name: 'trophySet',
     meta: { title: '奖品设置', icon: 'table' },
     component: () =>
-                    import('@/views/award/trophyset')
+			import('@/views/award/trophyset')
   },
   {
-    path: 'list',
-    name: 'List',
-    redirect: '/award/list/integral',
+    path: 'menu1',
+    component: () => import('@/views/nested/menu1/index'), // Parent router-view
+    name: 'Menu1',
     meta: { title: '榜单', icon: 'table' },
-    children: [{
-      path: 'integral',
-      name: 'integral',
-      component: () =>
-                            import('@/views/award/list/integral'),
-      meta: { title: '闯关积分', icon: 'table' }
-    },
-    {
-      path: 'condition',
-      name: 'condition',
-      component: () =>
-                            import('@/views/award/list/condition'),
-      meta: { title: '获奖情况', icon: 'table' }
-    },
-    {
-      path: 'residue',
-      name: 'residue',
-      component: () =>
-                            import('@/views/award/list/residue'),
-      meta: { title: '奖品剩余', icon: 'table' }
-    }
+    children: [
+      {
+        path: 'menu1-1',
+        component: () => import('@/views/nested/menu1/menu1-1'),
+        name: 'Menu1-1',
+        meta: { title: '闯关积分' }
+      },
+      {
+        path: 'menu1-2',
+        component: () => import('@/views/nested/menu1/menu1-2'),
+        name: 'Menu1-2',
+        meta: { title: '获奖情况' }
+      },
+      {
+        path: 'menu1-3',
+        component: () => import('@/views/nested/menu1/menu1-3'),
+        name: 'Menu1-3',
+        meta: { title: '获奖情况' }
+      }
     ]
   }
   ]
@@ -126,14 +124,14 @@ export const constantRoutes = [{
     path: 'festival',
     name: 'festival',
     component: () =>
-                    import('@/views/topical/index'),
+			import('@/views/topical/index'),
     meta: { title: '节假日主题', icon: 'tree' }
   },
   {
     path: 'emigrated',
     name: 'emigrated',
     component: () =>
-                    import('@/views/topical/indexOne'),
+			import('@/views/topical/indexOne'),
     meta: { title: '闯关主题', icon: 'table' }
   }
   ]
