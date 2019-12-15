@@ -159,7 +159,7 @@ export default {
     }
   },
   created() {
-    // this.fetchData()
+    level_openOrClose()()
   },
   methods: {
     add() {
